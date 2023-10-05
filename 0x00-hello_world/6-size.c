@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include <bits/libc-header-start.h>
 
 /**
- * 4-puts - Entry point
+ * main - print size of various C lang types
  *
  * Return: Always 0 (Success)
  */
