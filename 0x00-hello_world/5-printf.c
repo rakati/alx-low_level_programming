@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * 4-puts - Entry point
+ * main - Print string
  *
  * Return: Always 0 (Success)
  */
