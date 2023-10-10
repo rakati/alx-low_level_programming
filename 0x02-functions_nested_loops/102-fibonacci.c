@@ -11,7 +11,7 @@ int main(void)
 	int c = 0;
 
 	printf("0, 1");
-	while (c < 50)
+	while (c < 48)
 	{
 		printf(", %ld", i + j);
 		tmp = j;
