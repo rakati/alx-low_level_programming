@@ -1,5 +1,4 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
  * print_alphabet - print alphabets to the standard output
  *
@@ -9,6 +8,6 @@ void print_alphabet(void)
 {
 	char c = 'a';
 	while (c <= 'z')
-		putchar(c++);
-	putchar('\n');
+		_putchar(c++);
+	_putchar('\n');
 }
