@@ -24,7 +24,7 @@ int main(void)
 		i = tmp;
 		ii = t;
 		if (jj != 0)
-			printf(", %lu%lu", jj, j % 100000);
+			printf(", %lu%05lu", jj, j % 100000);
 		else
 			printf(", %lu", j % 100000);
 		c++;
