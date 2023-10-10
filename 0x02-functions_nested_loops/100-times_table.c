@@ -23,7 +23,8 @@ void print_times_table(int n)
 			res += x;
 			_putchar(',');
 			_putchar(' ');
-			_putchar(res / 10 == 0 ? ' ' : res / 10 + '0');
+			_putchar(res / 100 == 0 ? ' ' : res / 100 + '0');
+			_putchar(res / 10 == 0 ? ' ' : res % 100 / 10 + '0');
 			_putchar(res % 10 + '0');
 			i++;
 		}
