@@ -10,7 +10,7 @@ int main(void)
 	long int i = 1, j = 2, tmp;
 	int c = 0;
 
-	printf("0, 1");
+	printf("1, 2");
 	while (c < 48)
 	{
 		printf(", %ld", i + j);
