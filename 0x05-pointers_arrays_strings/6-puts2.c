@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
- * maputs2in - print even order
+ * puts2 - print even order
  *
  * @str: array characters
  */
 void puts2(char *str)
 {
-    int i;
+	int i;
 
 	i = 0;
 	while (str[i] != '\0')
