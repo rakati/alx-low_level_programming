@@ -1,24 +1,22 @@
 #include "main.h"
 
 /**
- * _strncpy - appends the n char from src string to the dest string
+ * reverse_array - reverses the content of an array of integers.
  *
- * @dest: arry of characters
- * @src: arry of characters
+ * @a: arry of characters
  * @n: integer
- * Return: concatenated string
  */
 
-char	*_strncpy(char *dest, char *src, int n)
+void reverse_array(int *a, int n)
 {
 	int	i = 0;
+	int tmp;
 
-	while (i < n && src[i])
+	while (i < n / 2)
 	{
-		dest[i] = src[i];
+		tmp = a[i];
+		a[i] = a[n - i - 1];
+		a[n - i - 1] = tmp;
 		i++;
 	}
-	while (i < n)
-		dest[i++] = '\0';
-	return (dest);
 }
