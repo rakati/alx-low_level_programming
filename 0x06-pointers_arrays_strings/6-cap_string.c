@@ -29,6 +29,8 @@ char *cap_string(char *s)
 	int	i = 0;
 	char *sep = " \t\n,;.!?\"(){}";
 
+	if (s[0] >= 'a' && s[0] <= 'z')
+		s[0] -= ('a' - 'A');
 	while (s[i])
 	{
 		if (_instring(s[i], sep))
