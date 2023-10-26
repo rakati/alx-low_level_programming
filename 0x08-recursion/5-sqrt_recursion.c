@@ -9,9 +9,9 @@
  * @n: An Integer to find its square root
  * Return: Integer Square root of n
  */
-int binary_sqrt(int l, int h, int n)
+int binary_sqrt(int l, int h, long int n)
 {
-	int mid;
+	long int mid;
 
 	if (l > h)
 		return (-1);
