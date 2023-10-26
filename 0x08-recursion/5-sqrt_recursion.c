@@ -9,7 +9,7 @@
  * @n: An Integer to find its square root
  * Return: Integer Square root of n
  */
-static int binary_sqrt(int l, int h, int n)
+int binary_sqrt(int l, int h, int n)
 {
 	int mid;
 
