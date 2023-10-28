@@ -10,13 +10,19 @@ int read_number(char *s)
 {
 	int a = 0;
 	int i = 0;
+	int sign = 1;
 
+	if (s[i] == '-')
+	{
+		sign = -1;
+		i++;
+	}
 	while (s[i])
 	{
 		a = (s[i] - '0') + a * 10;
 		i++;
 	}
-	return (a);
+	return (a * sign);
 }
 
 /**
