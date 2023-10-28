@@ -44,7 +44,7 @@ void print_number(int n)
  */
 int main(int ac, char **av)
 {
-	char s[] = "error\n";
+	char s[] = "Error\n";
 	int i = 0;
 
 	if (ac == 3)
