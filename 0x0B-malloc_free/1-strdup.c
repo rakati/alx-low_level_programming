@@ -13,8 +13,9 @@ char *_strdup(char *str)
 
 	while (str[size])
 		size++;
-	arr = malloc((size + 1) * sizeof(char));
-	if (!arr)
+	if (size == 0)
+		return (NULL);
+	if (!(arr = malloc((size + 1) * sizeof(char))))
 		return (NULL);
 	arr[size] = '\0';
 	for (i = 0; i < size; i++)
