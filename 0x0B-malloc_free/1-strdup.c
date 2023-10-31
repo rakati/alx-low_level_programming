@@ -11,11 +11,12 @@ char *_strdup(char *str)
 	char *arr;
 	int size = 0, i;
 
+	if (!str)
+		return (NULL);
 	while (str[size])
 		size++;
-	if (size == 0)
-		return (NULL);
-	if (!(arr = malloc((size + 1) * sizeof(char))))
+	arr = malloc((size + 1) * sizeof(char));
+	if (!arr)
 		return (NULL);
 	arr[size] = '\0';
 	for (i = 0; i < size; i++)
