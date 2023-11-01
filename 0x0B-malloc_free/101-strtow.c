@@ -41,7 +41,9 @@ char **strtow(char *str)
 			len++;
 		i++;
 	}
-	arr = malloc(sizeof(char *) * (len + 2));
+	if (len == 0)
+		return (NULL);
+	arr = malloc(sizeof(char *) * (len + 1));
 	if (!arr)
 		return (NULL);
 	arr[len] = NULL;
