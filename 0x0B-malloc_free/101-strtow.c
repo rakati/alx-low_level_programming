@@ -31,13 +31,13 @@ char **strtow(char *str)
 {
 	int len = 0;
 	char **arr;
-	int i = 1, j = 0, z;
+	int i = 0, j = 0, z;
 
 	if (!str || !str[0])
 		return (NULL);
 	while (str[i])
 	{
-		if (str[i] == ' ' && str[i - 1] != ' ')
+		if ((str[i + 1] == ' ' || str[i + 1] == '\0') && str[i] != ' ')
 			len++;
 		i++;
 	}
