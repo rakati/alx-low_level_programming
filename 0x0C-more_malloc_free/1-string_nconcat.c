@@ -32,8 +32,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *s;
 	unsigned int i = -1, ls1, ls2, k = 0;
 
-	ls1 = _strlen(s1);
-	ls2 = _strlen(s2);
+	ls1 = s1 != NULL ? _strlen(s1) : 0;
+	ls2 = s2 != NULL ? _strlen(s2) : 0;
 	ls2 = n < ls2 ? n : ls2;
 	s = malloc(ls1 + ls2 + 1);
 	if (s == NULL)
