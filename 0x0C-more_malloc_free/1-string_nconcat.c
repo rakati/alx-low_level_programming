@@ -30,11 +30,11 @@ int _strlen(char *s)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *s;
-	int i = -1, ls1, ls2, k = 0;
+	unsigned int i = -1, ls1, ls2, k = 0;
 
 	ls1 = _strlen(s1);
 	ls2 = _strlen(s2);
-	ls2 = ((int)n < ls2 ? (int)n : ls2);
+	ls2 = n < ls2 ? n : ls2;
 	s = malloc(ls1 + ls2 + 1);
 	if (s == NULL)
 		return (NULL);
