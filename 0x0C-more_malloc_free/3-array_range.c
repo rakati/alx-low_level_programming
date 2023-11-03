@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _calloc -  allocates memory for an array of int and initialized from min
+ * array_range -  allocates memory for an array of int and initialized from min
  * to max values
  *
  * @min: integer
