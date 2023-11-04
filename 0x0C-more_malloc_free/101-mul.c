@@ -97,17 +97,10 @@ char *mult_str(char *s1, char *s2, int l1, int l2)
 }
 
 /**
- * exit_error - exit on error
- */
-void exit_error(void)
-{
-	_puts("Error\n");
-	exit(98);
-}
-
-/**
  * main - check the code for
  *
+ * @ac: number of args
+ * @av: array of args
  * Return: Always 0.
  */
 int main(int ac, char **av)
@@ -117,16 +110,25 @@ int main(int ac, char **av)
 	int i;
 
 	if (ac != 3)
-		exit_error();
+	{
+		_puts("Error\n");
+		exit(98);
+	}
 	l1 = _isdigits(av[1]);
 	l2 = _isdigits(av[2]);
 	if (l1 == 0 || l2 == 0)
-		exit_error();
+	{
+		_puts("Error\n");
+		exit(98);
+	}
 	rev_string(av[1]);
 	rev_string(av[2]);
 	res = mult_str(av[1], av[2], l1, l2);
 	if (!res)
-		exit_error();
+	{
+		_puts("Error\n");
+		exit(98);
+	}
 	for (i = l1 + l2 - 1; res[i] == 0 && i > 0; i--)
 		;
 	for (; i >= 0; i--)
