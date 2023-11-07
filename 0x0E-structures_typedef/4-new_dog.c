@@ -1,5 +1,4 @@
 #include "dog.h"
-#include <stdlib.h>
 
 /**
  * _strdup - return a copy of an array of char
@@ -19,9 +18,9 @@ char *_strdup(char *str)
 	arr = malloc((size + 1) * sizeof(char));
 	if (!arr)
 		return (NULL);
-	arr[size] = '\0';
 	for (i = 0; i < size; i++)
 		arr[i] = str[i];
+	arr[size] = '\0';
 	return (arr);
 }
 
