@@ -27,7 +27,12 @@ int main(int ac, char **av)
 	}
 	p = (unsigned char *)main;
 	while (i < bytes)
-		printf("%02x ", p[i++]);
-	printf("\n");
+	{
+		printf("%02x", p[i++]);
+		if (i < bytes)
+			printf(" ");
+		else
+			printf("\n");
+	}
 	return (0);
 }
