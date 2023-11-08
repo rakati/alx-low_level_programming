@@ -20,6 +20,11 @@ int main(int ac, char **av)
 		return (1);
 	}
 	bytes = atoi(av[1]);
+	if (bytes < 0)
+	{
+		printf("Error\n");
+		return (2);
+	}
 	p = (unsigned char *)main;
 	while (i < bytes)
 		printf("%02x ", p[i++]);
