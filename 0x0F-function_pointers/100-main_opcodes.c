@@ -17,7 +17,7 @@ int main(int ac, char **av)
 	if (ac != 2)
 	{
 		printf("Error\n");
-		return (2);
+		return (1);
 	}
 	bytes = atoi(av[1]);
 	p = (unsigned char *)main;
