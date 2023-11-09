@@ -10,10 +10,13 @@
 void print_all(const char *const format, ...)
 {
 	va_list ap;
+	char *s;
 	unsigned int i = 0;
 	char p;
 
 	va_start(ap, format);
+	if (!format)
+		return;
 	while (format[i])
 	{
 		p = 1;
@@ -29,7 +32,10 @@ void print_all(const char *const format, ...)
 			printf("%f", va_arg(ap, double));
 			break;
 		case 's':
-			printf("%s", va_arg(ap, char *));
+			s = va_arg(ap, char *);
+			if (!s)
+				s = "(nil)";
+			printf("%s", s);
 			break;
 		default:
 			p = 0;
