@@ -1,29 +1,16 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
- * print_list - print list node values
- * @h: pointer to the head node of the list
+ * free_list - free list
+ * @head: pointer to the head node of the list
  *
- * Return: the number of nodes
  */
-size_t print_list(const list_t *h)
+void free_list(list_t *head)
 {
-	int n;
-	list_t *curr;
-
-	if (h == NULL)
-		return (0);
-	n = 0;
-	curr = (list_t *)h;
-	while (curr)
-	{
-		if (curr->str == NULL)
-			printf("[%d] %s\n", 0, "(nil)");
-		else
-			printf("[%d] %s\n", curr->len, curr->str);
-		curr = curr->next;
-		n++;
-	}
-	return (n);
+	if (head == NULL)
+		return;
+	if (head->str)
+		free(head->str);
+	free_list(head->next);
+	free(head);
 }
