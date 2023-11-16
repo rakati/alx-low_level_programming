@@ -18,7 +18,7 @@ int _strlen(const char *s)
 }
 
 /**
- * add_node - Add new node to the end of a list
+ * add_node_end - Add new node to the end of a list
  * @head: pointer to the head node of the list
  * @str: array of char to be add as a value of the new node
  *
@@ -39,11 +39,13 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	new->len = _strlen(str);
 	new->next = NULL;
-	curr = (list_t *)(*head);
-	if (curr == NULL)
+	if (head == NULL)
+		return (NULL);
+	if (*head == NULL)
 		*head = new;
 	else
 	{
+		curr = (list_t *)(*head);
 		while (curr->next)
 			curr = curr->next;
 		curr->next = new;
