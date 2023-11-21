@@ -5,7 +5,7 @@
  * delete_nodeint_at_index - Delete a node at a given position in the list
  * @head: A pointer to the head of the list
  * @index: an integer represent the position to insert node
- * Return: index of deleted node or -1 on error.
+ * Return: 1 of deleted node or -1 on error.
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
@@ -14,14 +14,14 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 
 	if (!head)
 		return (-1);
-	curr = *head;
 	if (index == 0)
 	{
 		del = *head;
 		*head = *head ? del->next : NULL;
 		free(del);
-		return (index);
+		return (1);
 	}
+	curr = *head;
 	while (i < index - 1 && curr)
 	{
 		curr = curr->next;
@@ -32,5 +32,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	del = curr->next;
 	curr->next = del ? del->next : NULL;
 	free(del);
-	return (index);
+	del = NULL;
+	return (1);
 }
