@@ -36,8 +36,11 @@ int cp(char *file_from, char *file_to)
 	if (fd_to == -1)
 		return (-1);
 
-	while ((r = read(fd_from, buf, 1024)) > 0)
+	while (1)
 	{
+		r = read(fd_from, buf, 1024);
+		if (r <= 0)
+			break;
 		buf[r] = '\0';
 		r = write(fd_to, buf, r);
 		if (r < 0)
