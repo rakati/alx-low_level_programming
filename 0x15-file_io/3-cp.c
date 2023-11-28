@@ -38,8 +38,6 @@ int cp(char *file_from, char *file_to)
 
 	while ((r = read(fd_from, buf, 1024)) > 0)
 	{
-		if (r < 0)
-			break;
 		buf[r] = '\0';
 		r = write(fd_to, buf, r);
 		if (r < 0)
@@ -66,17 +64,17 @@ int main(int ac, char **av)
 	st = cp(av[1], av[2]);
 	if (st == -2)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", av[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
 	}
 	if (st == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", av[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 		exit(99);
 	}
 	else if (st != 0)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", st);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", st);
 		exit(100);
 	}
 	return (0);
