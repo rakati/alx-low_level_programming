@@ -41,7 +41,7 @@ int cp(char *file_from, char *file_to)
 		r = read(fd_from, buf, 1024);
 		if (r <= 0)
 		{
-			r = -2;
+			r = r < 0 ? -2 : 0;
 			break;
 		}
 		buf[r] = '\0';
