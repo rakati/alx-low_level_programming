@@ -38,16 +38,18 @@ int cp(char *file_from, char *file_to)
 
 	while ((r = read(fd_from, buf, 1024)) > 0)
 	{
+		if (r < 0)
+			break;
 		buf[r] = '\0';
-		write(fd_to, buf, r);
+		r = write(fd_to, buf, r);
+		if (r < 0)
+			break;
 	}
-	if (r < 0)
-		return (-1);
 	if (close(fd_to) == -1)
 		return (fd_to);
 	if (close(fd_from) == -1)
 		return (fd_to);
-	return (0);
+	return (r < 0 ? -1 : 0);
 }
 
 /**
