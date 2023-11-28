@@ -40,7 +40,10 @@ int cp(char *file_from, char *file_to)
 	{
 		r = read(fd_from, buf, 1024);
 		if (r <= 0)
+		{
+			r = -2;
 			break;
+		}
 		buf[r] = '\0';
 		r = write(fd_to, buf, r);
 		if (r < 0)
@@ -50,7 +53,7 @@ int cp(char *file_from, char *file_to)
 		return (fd_to);
 	if (close(fd_from) == -1)
 		return (fd_to);
-	return (r < 0 ? -1 : 0);
+	return (r);
 }
 
 /**
