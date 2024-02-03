@@ -27,8 +27,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				return (0);
 			return (1);
 		}
-		if (!cur->next)
-			break;
 		cur = cur->next;
 	}
 	new = malloc(sizeof(hash_node_t));
@@ -43,9 +41,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(new->key);
 		return (0);
 	}
-	if (cur)
-		cur->next = new;
-	else
-		ht->array[i] = new;
+	new->next = ht->array[i];
+	ht->array[i] = new;
 	return (1);
 }
