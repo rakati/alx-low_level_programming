@@ -34,11 +34,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	new->value = strdup(value);
 	new->key = strdup(key);
-	new->next = NULL;
 	if (!new->value || !new->key)
 	{
 		free(new->value);
 		free(new->key);
+		free(new);
 		return (0);
 	}
 	new->next = ht->array[i];
