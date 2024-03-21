@@ -3,7 +3,6 @@ CC = gcc
 SRC = main.c school.c
 OBJ = ${SRC:.c=.o}
 CFLAGS = -Wall -Werror -Wextra -pedantic
-RM = rm -f
 
 .PHONY = all clean oclean fclean re
 
