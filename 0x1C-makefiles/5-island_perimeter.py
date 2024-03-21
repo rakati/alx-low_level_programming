@@ -21,8 +21,10 @@ def island_perimeter(grid):
         for i in range(1, l1):
             for j in range(1, len(grid[i]) - 1):
                 if grid[i][j]:
-                    res += (grid[i - 1][j] == 0) + (grid[i][j - 1] == 0) +\
-                        (grid[i + 1][j] == 0) + (grid[i][j + 1] == 0)
+                    res += (i == 0 or grid[i - 1][j] == 0) + \
+                        (j == 0 or grid[i][j - 1] == 0) +\
+                        (i == len(grid) - 1 or grid[i + 1][j] == 0) +\
+                        (j == len(grid[i]) - 1 or grid[i][j + 1] == 0)
         return res
     except ValueError:
         print('the function accept only list of list')
